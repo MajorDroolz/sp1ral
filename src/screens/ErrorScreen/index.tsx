@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../helpers/Button';
+import Link from '../../helpers/Link';
 import './index.scss';
 
 function ErrorScreen(props: any) {
@@ -9,9 +9,10 @@ function ErrorScreen(props: any) {
         An ERROR has occured!
       </h1>
       <br/>
-      <Button text="Return to Login"
-              fillColor="#E2EFDE"
-              backColor="#171614"/>
+      <Link text="Return to Login"
+            fillColor="#E2EFDE"
+            backColor="#171614"
+            href="/login"/>
     </div>
   )
 }
