@@ -1,0 +1,15 @@
+.input-button {
+  border: 0;
+  font: bold 4vmin monospace;
+  background-color: var(--back-color);
+  color: var(--fill-color);
+  border: 0.5vmin solid var(--fill-color);
+  border-radius: 1vmin;
+  padding: 1vmin 3vmin;
+  user-select: none;
+
+  &:active {
+    background-color: var(--fill-color);
+    color: var(--back-color);
+  }
+}
