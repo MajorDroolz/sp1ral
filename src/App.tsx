@@ -4,13 +4,20 @@ import ErrorScreen from './screens/ErrorScreen';
 import { Routes, Route, Navigate } from "react-router-dom";
 
 function App(props: any) {
-  const [ screen, ] = React.useState("login");
-
   return (
     <Routes>
-      <Route path="/login" element={<ErrorScreen/>}/>
-      <Route path="/" element={<Navigate to="/login"/>}/>
-      <Route path="*" element={<ErrorScreen/>}/>
+      <Route path="/login" element={
+        <ErrorScreen/>
+      }/>
+
+      <Route path="/" element={
+        <Navigate to="/login"/>
+      }/>
+
+      <Route path="*" element={
+        <ErrorScreen title="Page Not Found!"
+                     message="The page you're looking for does not exist."/>
+      }/>
     </Routes>
   )
 }
