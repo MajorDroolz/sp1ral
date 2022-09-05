@@ -1,0 +1,45 @@
+@import '../../index.scss';
+
+.login-screen {
+  background-color: #E2EFDE;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-title {
+  color: #171614;
+  text-align: center;
+  margin-top: 0;
+
+}
+
+.login-button {
+  margin-top: 4vmin;
+  text-align: center;
+  width: 20ch;
+}
+
+.github-button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  border: 0;
+  border-radius: 50%;
+  margin: 2vmin;
+  padding: 0;
+
+  font-size: 10vmin;
+
+  &:active {
+    background-color: transparent;
+    color: var(--fill-color);
+  }
+
+  align-items: center;
+  width: auto;
+  display: flex;
+}

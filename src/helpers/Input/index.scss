@@ -1,0 +1,32 @@
+.input-label {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-title {
+  padding: 0 2vmin;
+  margin: 0;
+  font-size: 3vmin;
+}
+
+.input-inner {
+  border: 0;
+  margin: 1vmin 0;
+  padding: 2vmin;
+  border-radius: 2vmin;
+  background-color: #C8D4C5;
+  font: 3vmin monospace;
+}
+
+.input-error {
+  display: block;
+  margin-bottom: 5vmin;
+  padding: 0 2vmin;
+  color: red;
+  font-style: italic;
+}

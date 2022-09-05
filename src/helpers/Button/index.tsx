@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import './index.scss';
 
 /*----------------------------------------------------------------------------*/
 
 interface ButtonProps {
-  text?: string;
+  text?: string | ReactElement;
   fillColor?: string;
   backColor?: string;
   onClick?: (event: React.MouseEvent) => any;

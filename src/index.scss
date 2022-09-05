@@ -36,9 +36,42 @@ body {
 }
 
 h1 {
-  font: bold 10vmin monospace;
+  font: bold 20vmin monospace;
+  margin: 0;
+}
+
+h2 {
+  font: bold 8vmin monospace;
+  margin: 0;
+}
+
+h3 {
+  font: bold 5vmin monospace;
+  margin: 0;
+}
+
+h4 {
+  font: bold 2.5vmin monospace;
+  margin: 0;
+}
+
+h5 {
+  font: bold 1.25vmin monospace;
+  margin: 0;
+}
+
+h6 {
+  font: bold 0.625vmin monospace;
+  margin: 0;
 }
 
 p {
   font: 3vmin monospace;
+  margin: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }

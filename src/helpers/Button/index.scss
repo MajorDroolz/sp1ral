@@ -1,13 +1,14 @@
 .input-button {
   border: 0;
-  font: bold 4vmin monospace;
+  font: bold 3vmin monospace;
   background-color: var(--back-color);
   color: var(--fill-color);
-  border: 0.5vmin solid var(--fill-color);
-  border-radius: 1vmin;
-  padding: 1vmin 3vmin;
+  border: 0.75vmin solid var(--fill-color);
+  border-radius: 2vmin;
+  padding: 2vmin 3vmin;
   user-select: none;
   text-decoration: none;
+  cursor: pointer;
 
   &:active {
     background-color: var(--fill-color);

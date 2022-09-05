@@ -1,13 +1,17 @@
 import React from 'react';
 import './App.scss';
 import ErrorScreen from './screens/ErrorScreen';
+import LoginScreen from './screens/LoginScreen';
+import LoginModal from './modals/LoginModal';
 import { Routes, Route, Navigate } from "react-router-dom";
 
+/*----------------------------------------------------------------------------*/
+
 function App(props: any) {
-  return (
+  return <>
     <Routes>
       <Route path="/login" element={
-        <ErrorScreen/>
+        <LoginScreen/>
       }/>
 
       <Route path="/" element={
@@ -19,7 +23,10 @@ function App(props: any) {
                      message="The page you're looking for does not exist."/>
       }/>
     </Routes>
-  )
+    <LoginModal/>
+  </>;
 }
+
+/*----------------------------------------------------------------------------*/
 
 export default React.memo(App);

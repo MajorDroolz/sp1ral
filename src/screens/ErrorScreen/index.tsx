@@ -12,20 +12,21 @@ interface ErrorScreenProps {
 }
 
 function ErrorScreen(props: ErrorScreenProps) {
-  const { title, message, link, linkTitle } = props;
+  let { title, message, link, linkTitle } = props;
+
+  title ??= "An error has occured!";
+  message ??= "";
+  linkTitle ??= "Return to Login";
+  link ??= "/login";
 
   return (
     <div className="error-screen">
-      <h1 className="error-screen-title">
-        {title ?? "An error has occured!"}
-      </h1>
-      <p className="error-screen-message">
-        {message ?? ""}
-      </p>
-      <Link text={linkTitle ?? "Return to Login"}
+      <h2 className="error-screen-title">{title}</h2>
+      <p className="error-screen-message">{message}</p>
+      <Link text={linkTitle}
             fillColor="#E2EFDE"
             backColor="#171614"
-            href={link ?? "/login"}/>
+            href={link}/>
     </div>
   )
 }
