@@ -15,7 +15,7 @@ function LoginScreen(props: LoginScreenProps) {
             backColor="#E2EFDE"
             fillColor="#171614"
             href="/main"
-            className="login-button"/>
+            className="solid login-button"/>
             
       <Link text="Tutorial"
             backColor="#E2EFDE"

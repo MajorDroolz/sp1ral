@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector } from '../../util';
 import { SELECT, STORE, GAME } from '../../data';
-import { Input, Button } from '../../helpers';
+import { Input } from '../../helpers';
+import { MdClear } from 'react-icons/md';
 import './index.scss';
 
 /*----------------------------------------------------------------------------*/
@@ -18,8 +19,12 @@ function LoginModal(props: LoginModalProps) {
 
   const className = `modal-back ${isOpen ? "visible": ""}`;
 
-  const handleLogin = React.useCallback((event: React.FormEvent) => {
-    event.preventDefault();
+  const handleClear = React.useCallback(() => {
+    STORE.dispatch(GAME.toggleModal("login"));
+  }, [ ]);
+
+  const handleLogin = React.useCallback(() => {
+    console.log("LOG IN");
     if (userRef.current == null || pswdRef.current == null) return;
 
     if (user.length === 0) {
@@ -28,13 +33,39 @@ function LoginModal(props: LoginModalProps) {
       return pswdRef.current.focus();
     }
 
-    STORE.dispatch(GAME.toggleModal("login"));
-  }, [ user, pswd ]);
+    handleClear();
+  }, [ user, pswd, handleClear ]);
+
+  const handleSignup = React.useCallback(() => {
+    console.log("SIGN UP");
+    handleClear();
+  }, [ handleClear ]);
+
+  const handleSubmit = React.useCallback((event: React.FormEvent) => {
+    event.preventDefault();
+    const native = event.nativeEvent as SubmitEvent;
+    const submitter = native.submitter as HTMLInputElement;
+    const type = submitter.name;
+
+    switch (type) {
+    case "signup":
+      return handleSignup();
+    case "login":
+      return handleLogin();
+    default:
+      return handleClear();
+    }
+  }, [ handleLogin, handleSignup, handleClear ]);
 
   return (
     <div className={className}>
-      <form className="login-modal" onSubmit={handleLogin}>
-        <h2 className="login-title">Log In</h2>
+      <form className="login-modal" onSubmit={handleSubmit}>
+        <div className="login-top">
+          <h2 className="login-title">Log In</h2>
+          <button className="input-button smooth login-cancel">
+            <MdClear className="login-cancel-inner"/>
+          </button>
+        </div>
 
         <Input i={0}
                name="username"
@@ -53,8 +84,14 @@ function LoginModal(props: LoginModalProps) {
                ref={pswdRef}/>
 
         <span className="login-buttons">
-          <Button className="login-signup" text="Sign Up" backColor="#E2EFDE" fillColor="#171614"/>
-          <input className="login-submit" type="submit" value="Submit"/>
+          <input className="input-button solid login-submit"
+                 type="submit"
+                 name="login"
+                 value="Log In"/>
+          <input className="input-button smooth login-submit"
+                 type="submit"
+                 name="signup"
+                 value="Sign Up"/>
         </span>
       </form>
     </div>

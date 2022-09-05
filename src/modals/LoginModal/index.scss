@@ -24,30 +24,48 @@
   flex-direction: column;
 }
 
-.login-title {
-  white-space: pre;
-  margin: 0 20vmin 5vmin 20vmin;
-}
-
 .login-signup {
   flex: 1;
 }
 
 .login-buttons {
   display: flex;
+  flex-direction: row-reverse;
 }
 
 .login-submit {
-  border: 0;
-  font: bold 3vmin monospace;
-  background-color: #171614;
-  color: #E2EFDE;
-  border: 0.75vmin solid #171614;
-  border-radius: 2vmin;
-  padding: 2vmin 3vmin;
-  user-select: none;
-  text-decoration: none;
   flex: 1;
   margin-left: 2vmin;
-  cursor: pointer;
+}
+
+.login-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5vmin;
+  // background-color: yellow;
+  position: relative;
+}
+
+.login-title {
+  white-space: pre;
+  margin: 0 25vmin;
+}
+
+.login-cancel {
+  font-size: 7vmin;
+  font-weight: 900;
+  // background-color: green;
+  align-items: center;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  right: 0;
+}
+
+.login-cancel-inner {
+  font-size: 7vmin;
+  // background-color: blue;
+  align-items: center;
+  display: flex;
 }

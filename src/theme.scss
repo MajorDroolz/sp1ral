@@ -1,0 +1,16 @@
+$dark: #171614;
+$light: #E2EFDE;
+
+:root {
+  --primary: #{$dark};
+  --primary-light: #{mix($light, $dark, 25%)};
+  --secondary-dark: #{mix($dark, $light, 25%)};
+  --secondary: #{$light};
+}
+
+.inverse {
+  --primary: #{$light};
+  --primary-light: #{mix($dark, $light, 25%)};
+  --secondary-dark: #{mix($light, $dark, 25%)};
+  --secondary: #{$dark};
+}

@@ -26,7 +26,8 @@ function ErrorScreen(props: ErrorScreenProps) {
       <Link text={linkTitle}
             fillColor="#E2EFDE"
             backColor="#171614"
-            href={link}/>
+            href={link}
+            className="inverse solid"/>
     </div>
   )
 }
